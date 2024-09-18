@@ -20,16 +20,14 @@ const Home: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <Provider store={store}>
-    <div className={styles.container}>
-      <h1>Game Lobby</h1>
-      <SearchBar />
-      <div className={styles.content}>
-        <CategoryMenu />
-        <GamesList />
+      <div className={styles.container}>
+        <h1>Game Lobby</h1>
+        <SearchBar />
+        <div className={styles.content}>
+          <CategoryMenu />
+          <GamesList />
+        </div>
       </div>
-    </div>
-    </Provider>
   );
 };
 

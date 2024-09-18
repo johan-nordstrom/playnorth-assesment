@@ -27,6 +27,7 @@ export const fetchGames = createAsyncThunk(
     const response = await axios.get('https://casino.api.pikakasino.com/v1/pika/en/games/tiles', {
       params: { category, search, pageNumber, pageSize },
     });
+    console.log('items', response.data.items);
     return response.data.items;
   }
 );

@@ -2,6 +2,7 @@
 .searchBar {
   display: flex;
   margin-bottom: 1rem;
+  color: #000;
 
   input {
     flex-grow: 1;
@@ -13,7 +14,7 @@
   button {
     padding: 0.5rem 1rem;
     background-color: var(--secondary-color);
-    color: white;
+    color: #000;
     border: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;

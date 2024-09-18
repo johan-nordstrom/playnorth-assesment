@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../lib/store';
+import { AppDispatch } from '../../redux/store';
 import { fetchCategories, fetchGames } from '../redux/gamesSlice';
 import CategoryMenu from '../../components/CategoryMenu';
 import GamesList from '../../components/GamesList';

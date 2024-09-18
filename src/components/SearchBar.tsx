@@ -1,7 +1,7 @@
 // File: src/components/SearchBar.tsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../lib/store';
+import { AppDispatch } from '../redux/store';
 import { fetchGames } from '../redux/gameSlice';
 import styles from '../styles/SearchBar.module.scss';
 

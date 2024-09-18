@@ -8,6 +8,8 @@ import GamesList from '../components/GamesList';
 import SearchBar from '../components/SearchBar';
 import styles from '../styles/Home.module.scss';
 
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,6 +20,7 @@ const Home: React.FC = () => {
   }, [dispatch]);
 
   return (
+    <Provider store={store}>
     <div className={styles.container}>
       <h1>Game Lobby</h1>
       <SearchBar />
@@ -26,6 +29,7 @@ const Home: React.FC = () => {
         <GamesList />
       </div>
     </div>
+    </Provider>
   );
 };
 

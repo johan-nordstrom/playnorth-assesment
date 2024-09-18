@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../redux/store";
 import { fetchGames } from "../redux/gameSlice";
 import styles from "../styles/CategoryMenu.module.scss";
+import Link from 'next/link';
 
 export default function CategoryMenu() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,9 +18,11 @@ export default function CategoryMenu() {
       <ul>
         {categories.map((category: any) => (
           <li key={category.id}>
-            <button onClick={() => handleCategoryClick(category.id)}>
-              {category.name}
-            </button>
+            <Link href={`/category/${category.name}`}>
+              <button onClick={() => handleCategoryClick(category.id)}>
+                {category.name}
+              </button>
+            </Link>
           </li>
         ))}
       </ul>

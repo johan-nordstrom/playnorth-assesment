@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { Game, Category } from '../types';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { Game, Category } from "../types";
 
 interface GamesState {
   categories: Category[];
@@ -16,23 +16,41 @@ const initialState: GamesState = {
   error: null,
 };
 
-export const fetchCategories = createAsyncThunk('games/fetchCategories', async () => {
-  const response = await axios.get('https://casino.api.pikakasino.com/v1/pika/en/config');
-  return response.data.menu.lobby.items;
-});
+export const fetchCategories = createAsyncThunk(
+  "games/fetchCategories",
+  async () => {
+    const response = await axios.get(
+      "https://casino.api.pikakasino.com/v1/pika/en/config"
+    );
+    return response.data.menu.lobby.items;
+  }
+);
 
 export const fetchGames = createAsyncThunk(
-  'games/fetchGames',
-  async ({ category, search, pageNumber, pageSize }: { category?: string; search?: string; pageNumber?: number; pageSize?: number }) => {
-    const response = await axios.get('https://casino.api.pikakasino.com/v1/pika/en/games/tiles', {
-      params: { category, search, pageNumber, pageSize },
-    });
+  "games/fetchGames",
+  async ({
+    category,
+    search,
+    pageNumber,
+    pageSize,
+  }: {
+    category?: string;
+    search?: string;
+    pageNumber?: number;
+    pageSize?: number;
+  }) => {
+    const response = await axios.get(
+      "https://casino.api.pikakasino.com/v1/pika/en/games/tiles",
+      {
+        params: { category, search, pageNumber, pageSize },
+      }
+    );
     return response.data.items;
   }
 );
 
 const gamesSlice = createSlice({
-  name: 'games',
+  name: "games",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -46,7 +64,7 @@ const gamesSlice = createSlice({
       })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'Failed to fetch categories';
+        state.error = action.error.message || "Failed to fetch categories";
       })
       .addCase(fetchGames.pending, (state) => {
         state.loading = true;
@@ -57,7 +75,7 @@ const gamesSlice = createSlice({
       })
       .addCase(fetchGames.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'Failed to fetch games';
+        state.error = action.error.message || "Failed to fetch games";
       });
   },
 });

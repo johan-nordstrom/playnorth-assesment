@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../redux/store';
+import { AppDispatch } from '../lib/store';
 import { fetchCategories, fetchGames } from '../redux/gameSlice';
 import CategoryMenu from '../components/CategoryMenu';
 import GamesList from '../components/GamesList';
@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar';
 import styles from '../styles/Home.module.scss';
 
 import { Provider } from 'react-redux';
-import { store } from '../redux/store';
+import { store } from '../lib/store';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

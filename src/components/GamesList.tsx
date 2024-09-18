@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
+import { RootState } from '../lib/store';
 import styles from '../styles/GamesList.module.scss';
 
 const GamesList: React.FC = () => {

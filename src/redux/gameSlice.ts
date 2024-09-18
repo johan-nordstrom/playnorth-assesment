@@ -18,7 +18,7 @@ const initialState: GamesState = {
 
 export const fetchCategories = createAsyncThunk('games/fetchCategories', async () => {
   const response = await axios.get('https://casino.api.pikakasino.com/v1/pika/en/config');
-  return response.data.categories;
+  return response.data.menu.lobby.items;
 });
 
 export const fetchGames = createAsyncThunk(
@@ -27,7 +27,7 @@ export const fetchGames = createAsyncThunk(
     const response = await axios.get('https://casino.api.pikakasino.com/v1/pika/en/games/tiles', {
       params: { category, search, pageNumber, pageSize },
     });
-    return response.data.games;
+    return response.data.items;
   }
 );
 

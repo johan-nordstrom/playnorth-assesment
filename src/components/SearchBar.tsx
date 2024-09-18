@@ -26,3 +26,5 @@ const SearchBar: React.FC = () => {
     </form>
   );
 };
+
+export default SearchBar;

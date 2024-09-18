@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
-import { fetchGames } from '../redux/gamesSlice';
+import { fetchGames } from '../redux/gameSlice';
 import styles from '../styles/CategoryMenu.module.scss';
 
 const CategoryMenu: React.FC = () => {

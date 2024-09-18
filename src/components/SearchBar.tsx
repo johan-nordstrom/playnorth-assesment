@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../redux/store';
-import { fetchGames } from '../redux/gamesSlice';
+import { fetchGames } from '../redux/gameSlice';
 import styles from '../styles/SearchBar.module.scss';
 
 const SearchBar: React.FC = () => {

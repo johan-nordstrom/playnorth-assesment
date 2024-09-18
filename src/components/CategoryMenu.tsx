@@ -15,7 +15,7 @@ export default function CategoryMenu()  {
   return (
     <nav className={styles.categoryMenu}>
       <ul>
-        {categories.map((category) => (
+        {categories.map((category: any) => (
           <li key={category.id}>
             <button onClick={() => handleCategoryClick(category.id)}>{category.name}</button>
           </li>

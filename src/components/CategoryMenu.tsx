@@ -1,10 +1,10 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../redux/store';
-import { fetchGames } from '../redux/gameSlice';
-import styles from '../styles/CategoryMenu.module.scss';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "../redux/store";
+import { fetchGames } from "../redux/gameSlice";
+import styles from "../styles/CategoryMenu.module.scss";
 
-export default function CategoryMenu()  {
+export default function CategoryMenu() {
   const dispatch = useDispatch<AppDispatch>();
   const categories = useSelector((state: RootState) => state.games.categories);
 
@@ -17,10 +17,12 @@ export default function CategoryMenu()  {
       <ul>
         {categories.map((category: any) => (
           <li key={category.id}>
-            <button onClick={() => handleCategoryClick(category.id)}>{category.name}</button>
+            <button onClick={() => handleCategoryClick(category.id)}>
+              {category.name}
+            </button>
           </li>
         ))}
       </ul>
     </nav>
   );
-};
+}

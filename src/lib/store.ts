@@ -6,10 +6,3 @@ export const store = configureStore({
     games: gamesReducer,
   },
 });
-
-
-export const makeStore = () => {
-  return configureStore({
-    reducer: gamesReducer,
-  });
-};

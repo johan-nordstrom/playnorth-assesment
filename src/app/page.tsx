@@ -5,10 +5,10 @@ import { AppDispatch } from '../lib/store';
 import { fetchCategories, fetchGames } from '../redux/gameSlice';
 import CategoryMenu from '../components/CategoryMenu';
 import GamesList from '../components/GamesList';
-import { SearchBar } from '../components/SearchBar';
+import SearchBar from '../components/SearchBar';
 import styles from '../styles/Home.module.scss';
 
-const Home: React.FC = () => {
+export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -27,5 +27,3 @@ const Home: React.FC = () => {
       </div>
   );
 };
-
-export default Home;

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../lib/store';
 import styles from '../styles/GamesList.module.scss';
 
-const GamesList: React.FC = () => {
+export default function GamesList() {
   const games = useSelector((state: RootState) => state.games.games);
 
   return (
@@ -18,5 +18,3 @@ const GamesList: React.FC = () => {
     </div>
   );
 };
-
-export default GamesList;

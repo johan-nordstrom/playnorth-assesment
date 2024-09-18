@@ -5,7 +5,7 @@ import { AppDispatch } from '../lib/store';
 import { fetchGames } from '../redux/gameSlice';
 import styles from '../styles/SearchBar.module.scss';
 
-const SearchBar: React.FC = () => {
+export default function SearchBar() {
   const [search, setSearch] = useState('');
   const dispatch = useDispatch<AppDispatch>();
 
@@ -26,5 +26,3 @@ const SearchBar: React.FC = () => {
     </form>
   );
 };
-
-export default SearchBar;

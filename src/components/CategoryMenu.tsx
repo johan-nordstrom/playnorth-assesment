@@ -4,7 +4,7 @@ import { RootState, AppDispatch } from '../redux/store';
 import { fetchGames } from '../redux/gameSlice';
 import styles from '../styles/CategoryMenu.module.scss';
 
-const CategoryMenu: React.FC = () => {
+export default function CategoryMenu()  {
   const dispatch = useDispatch<AppDispatch>();
   const categories = useSelector((state: RootState) => state.games.categories);
 
@@ -24,5 +24,3 @@ const CategoryMenu: React.FC = () => {
     </nav>
   );
 };
-
-export default CategoryMenu;
